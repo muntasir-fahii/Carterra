@@ -8,8 +8,10 @@ import logo from "../../public/images/cta/logo.png";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 import SearchMobile from "./SearchMobile";
+import { SearchContext } from "../context/serach";
 
 const Header = () => {
+  const { setSearchActive } = useContext(SearchContext);
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -23,6 +25,12 @@ const Header = () => {
         setHeader(true);
       } else {
         setHeader(false);
+      }
+
+      if (window.scrollY > 800) {
+        setSearchActive(true);
+      } else {
+        setSearchActive(false);
       }
     };
     window.addEventListener("scroll", handleScroll);

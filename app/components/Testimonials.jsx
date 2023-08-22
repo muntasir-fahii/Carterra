@@ -1,5 +1,12 @@
 const Testimonials = () => {
-  return <div>Testimonials</div>;
+  return (
+    <section
+      className="section flex items-center bg-cyan-300"
+      id="testimonials"
+    >
+      Testimonials
+    </section>
+  );
 };
 
 export default Testimonials;
